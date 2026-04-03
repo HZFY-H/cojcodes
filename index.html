@@ -1527,16 +1527,16 @@
 	<script type="text/javascript" src="./resources/app.js"></script>
 	<script>
 const submitBtn = document.getElementById('download_coj_codes');
-
+const proxy = "http://gh.llkk.cc/https://raw.githubusercontent.com/hzfy-h/hzfy-h.github.io/main/"
 submitBtn.addEventListener('click', function() {
     console.log('download_coj_codes!');
-	window.location.href = './downloads/candyojforever.7z';
+	window.location.href = proxy + 'downloads/candyojforever.7z';
 });
 const user_down = document.getElementById('user_down');
 
 user_down.addEventListener('click', function() {
     console.log('user_down!');
-	window.location.href = './downloads/UserSearch.7z';
+	window.location.href = proxy + 'downloads/UserSearch.7z';
 });
 
 const secretText = "2026candyojcodeshzfyrp++";
