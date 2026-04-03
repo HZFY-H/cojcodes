@@ -1526,11 +1526,18 @@
 	<script type="text/javascript" src="./resources/vendor.js"></script>
 	<script type="text/javascript" src="./resources/app.js"></script>
 	<script>
-const submitBtn = document.getElementById('download_coj_codes');
+
 const proxy = "http://gh.llkk.cc/https://raw.githubusercontent.com/hzfy-h/hzfy-h.github.io/main/"
+
+const submitBtn = document.getElementById('download_coj_codes');
 submitBtn.addEventListener('click', function() {
     console.log('download_coj_codes!');
 	window.location.href = proxy + 'downloads/candyojforever.7z';
+});
+submitBtn.addEventListener('contextmenu', function(e) {
+	e.preventDefault();
+    console.log('7z!');
+	window.location.href = proxy + 'downloads/7zFM.exe';
 });
 const user_down = document.getElementById('user_down');
 
