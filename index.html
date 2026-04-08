@@ -1546,52 +1546,7 @@ user_down.addEventListener('dblclick', function() {
 	window.location.href = proxy + 'downloads/UserSearch.7z';
 });
 
-const secretText = "2026candyojcodeshzfyrp++";
 
-let clickCount = 0;
-let lastClickTime = 0;
-const CLICK_INTERVAL = 1000;
-const REQUIRED_CLICKS = 5; 
-
-const title = document.getElementById('secretTitle');
-
-title.addEventListener('click', async function() {
-    const now = Date.now();
-    
-    if (now - lastClickTime > CLICK_INTERVAL) {
-        clickCount = 1;
-    } else {
-        clickCount++;
-    }
-    
-    lastClickTime = now;
-    
-    console.log(`已连续点击 ${clickCount} 次`);
-    
-    
-    if (clickCount >= REQUIRED_CLICKS) {
-		title.textContent = '题目描述！';
-		await new Promise(resolve => setTimeout(resolve, 300));
-		title.textContent = '题目描述';
-        navigator.clipboard.writeText(secretText).then(() => {
-            console.log('复制的内容:', secretText);
-        }).catch(err => {
-            console.error('复制失败:', err);
-        });
-        clickCount = 0;
-        delete this.dataset.count;
-    }
-});
-setInterval(() => {
-    const now = Date.now();
-    if (now - lastClickTime > 5000 && clickCount > 0) {
-        clickCount = 0;
-        if (title.dataset.count) {
-            delete title.dataset.count;
-        }
-    }
-}, 1000);
-});
 	</script>
 	<div data-v-7a63e4b3=""><!----></div>
 </body>
