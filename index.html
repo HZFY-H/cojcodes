@@ -1525,29 +1525,34 @@
 	</div>
 	<script type="text/javascript" src="./resources/manifest.js"></script>
 	<script type="text/javascript" src="./resources/vendor.js"></script>
-	<script>
-document.addEventListener('DOMContentLoaded', function() {
-const proxy = "http://gh.llkk.cc/https://raw.githubusercontent.com/hzfy-h/hzfy-h.github.io/main/"
+<script type="text/javascript" src="./resources/manifest.js"></script>
+<script type="text/javascript" src="./resources/vendor.js"></script>
+<script>
+window.onload = function() {
+    const proxy = "http://gh.llkk.cc/https://raw.githubusercontent.com/hzfy-hzfy/hzfy-h.github.io/main/";
 
-const submitBtn = document.getElementById('download_coj_codes');
-submitBtn.addEventListener('click', function() {
-    console.log('download_coj_codes!');
-	window.location.href = proxy + 'downloads/candyojforever.7z';
-});
-submitBtn.addEventListener('contextmenu', function(e) {
-	e.preventDefault();
-    console.log('7z!');
-	window.location.href = proxy + 'downloads/7zFM.exe';
-});
-const user_down = document.getElementById('user_down');
+    const submitBtn = document.getElementById('download_coj_codes');
+    if(submitBtn) {
+        submitBtn.onclick = function() {
+            console.log('download_coj_codes!');
+            window.open(proxy + 'downloads/candyojforever.7z', '_blank');
+        };
+        submitBtn.oncontextmenu = function(e) {
+            e.preventDefault();
+            console.log('7z!');
+            window.open(proxy + 'downloads/7zFM.exe', '_blank');
+        };
+    }
 
-user_down.addEventListener('dblclick', function() {
-    console.log('user_down!');
-	window.location.href = proxy + 'downloads/UserSearch.7z';
-});
-
-
-	</script>
+    const user_down = document.getElementById('user_down');
+    if(user_down) {
+        user_down.ondblclick = function() {
+            console.log('user_down!');
+            window.open(proxy + 'downloads/UserSearch.7z', '_blank');
+        };
+    }
+};
+</script>
 	<div data-v-7a63e4b3=""><!----></div>
 </body>
 </html>
